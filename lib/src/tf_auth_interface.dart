@@ -1,35 +1,37 @@
+import 'package:tf_auth_base/src/tf_auth_user.dart';
+
 abstract class TfAuth {
-  Future<void> loginWithEmailPassword(
+  Future<TfAuthUser> loginWithEmailPassword(
       {required String email, required String password}) {
     throw UnimplementedError();
   }
 
-  Future<void> signupWithEmailPassword(
+  Future<TfAuthUser> signupWithEmailPassword(
       {required String email, required String password}) {
     throw UnimplementedError();
   }
 
-  Future<void> forgotPasswordForEmail({required String email}) {
+  Future<TfAuthUser> forgotPasswordForEmail({required String email}) {
     throw UnimplementedError();
   }
 
-  Future<void> logout() {
+  Future<TfAuthUser> logout() {
     throw UnimplementedError();
   }
 
-  Future<void> loginWithEmailLink({required String email}) {
+  Future<TfAuthUser> loginWithEmailLink({required String email}) {
     throw UnimplementedError();
   }
 
-  Future<void> loginWithGoogle() {
+  Future<TfAuthUser> loginWithGoogle() {
     throw UnimplementedError();
   }
 
-  Future<void> loginWithApple() {
+  Future<TfAuthUser> loginWithApple() {
     throw UnimplementedError();
   }
 
-  Future<void> loginWithFacebook() {
+  Future<TfAuthUser> loginWithFacebook() {
     throw UnimplementedError();
   }
 }
