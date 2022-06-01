@@ -1,6 +1,8 @@
+import 'package:flutter/semantics.dart';
+
 class TfAuthUser {
   // TODO: add required fields for user object here in this class
-  final int uid;
+  final String uid;
   final String displayName;
   final String email;
   final String username;
