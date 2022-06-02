@@ -11,7 +11,7 @@ abstract class TfAuth {
     throw UnimplementedError();
   }
 
-  Future<TfAuthUser> forgotPasswordForEmail({required String email}) {
+  Future<void> forgotPasswordForEmail({required String email}) {
     throw UnimplementedError();
   }
 
