@@ -15,7 +15,7 @@ abstract class TfAuth {
     throw UnimplementedError();
   }
 
-  Future<TfAuthUser> logout() {
+  Future<void> logout() {
     throw UnimplementedError();
   }
 
