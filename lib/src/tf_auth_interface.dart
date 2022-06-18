@@ -17,7 +17,9 @@ abstract class TfAuth {
   /// Update current active user.
   set currentUser(TfAuthUser? userUpdate) {
     _currentUser = userUpdate;
-    _userChangesStreamController.sink.add(_currentUser);
+    if (currentUser != userUpdate) {
+      _userChangesStreamController.sink.add(_currentUser);
+    }
   }
 
   /// Stream of user changes to listen to user changes events.

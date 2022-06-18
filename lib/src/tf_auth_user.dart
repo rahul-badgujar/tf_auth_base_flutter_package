@@ -17,4 +17,10 @@ class TfAuthUser {
     this.isEmailVerified = false,
     required this.photoUrl,
   });
+
+  @override
+  bool operator ==(other) => other is TfAuthUser && uid == other.uid;
+
+  @override
+  int get hashCode => uid.hashCode;
 }
