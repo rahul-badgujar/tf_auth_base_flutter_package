@@ -6,14 +6,14 @@ class TfAuthPersistantData {
   static const String _boxName = "tf-auth-persistant-data";
   static const String _keyAuthUser = 'authuser';
 
-  late final Box<Map<String, dynamic>> _box;
+  late final Box<Map> _box;
 
   TfAuthPersistantData._privateConstructor();
   static final instance = TfAuthPersistantData._privateConstructor();
 
   Future<void> init() async {
     if (!Hive.isBoxOpen(_boxName)) {
-      _box = await Hive.openBox<Map<String, dynamic>>(_boxName);
+      _box = await Hive.openBox<Map>(_boxName);
     }
   }
 

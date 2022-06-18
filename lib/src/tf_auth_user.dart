@@ -22,7 +22,7 @@ class TfAuthUser {
   @override
   int get hashCode => uid.hashCode;
 
-  factory TfAuthUser.fromJson(Map<String, dynamic> json) {
+  factory TfAuthUser.fromJson(Map json) {
     return TfAuthUser(
       uid: json["uid"],
       displayName: json["displayName"],
@@ -32,7 +32,7 @@ class TfAuthUser {
     );
   }
 
-  Map<String, dynamic> toJson() {
+  Map toJson() {
     return <String, dynamic>{
       "uid": uid,
       "displayName": displayName,
