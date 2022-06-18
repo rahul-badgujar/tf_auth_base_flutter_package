@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/widgets.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:tf_auth_base/src/persistant_data/tf_auth_persistant_data.dart';
 import 'package:tf_auth_base/src/tf_auth_user.dart';
 
 abstract class TfAuth {
@@ -9,6 +11,15 @@ abstract class TfAuth {
   final StreamController<TfAuthUser?> _userChangesStreamController =
       StreamController<TfAuthUser?>.broadcast();
 
+  /// Perform any initialization required for TfAuth instance. \
+  /// NOTE: Call to the super should be first statement of implementation.
+  @mustCallSuper
+  Future<void> init() async {
+    await Hive.initFlutter();
+    await TfAuthPersistantData.instance.init();
+    currentUser = TfAuthPersistantData.instance.authUser;
+  }
+
   /// Returns current user if logged in, otherwise returns `null`
   TfAuthUser? get currentUser {
     return _currentUser;
@@ -16,6 +27,7 @@ abstract class TfAuth {
 
   /// Update current active user.
   set currentUser(TfAuthUser? userUpdate) {
+    TfAuthPersistantData.instance.authUser = userUpdate;
     _currentUser = userUpdate;
     if (currentUser != userUpdate) {
       _userChangesStreamController.sink.add(_currentUser);
