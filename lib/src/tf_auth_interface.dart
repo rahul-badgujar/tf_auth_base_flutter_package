@@ -38,13 +38,13 @@ abstract class TfAuth {
   }
 
   /// Login with [email] and [password] credentials.
-  Future<TfAuthUser> loginWithEmailPassword(
+  Future<void> loginWithEmailPassword(
       {required String email, required String password}) {
     throw UnimplementedError();
   }
 
   /// Signup for a new account with [email] and [password].
-  Future<TfAuthUser> signupWithEmailPassword(
+  Future<void> signupWithEmailPassword(
       {required String email, required String password}) {
     throw UnimplementedError();
   }
@@ -55,22 +55,22 @@ abstract class TfAuth {
   }
 
   /// Login with the email link sent on [email].
-  Future<TfAuthUser> loginWithEmailLink({required String email}) {
+  Future<void> loginWithEmailLink({required String email}) {
     throw UnimplementedError();
   }
 
   /// Login with Google Account.
-  Future<TfAuthUser> loginWithGoogle() {
+  Future<void> loginWithGoogle() {
     throw UnimplementedError();
   }
 
   /// Login with Apple Account.
-  Future<TfAuthUser> loginWithApple() {
+  Future<void> loginWithApple() {
     throw UnimplementedError();
   }
 
   /// Login with Facebook Account.
-  Future<TfAuthUser> loginWithFacebook() {
+  Future<void> loginWithFacebook() {
     throw UnimplementedError();
   }
 
